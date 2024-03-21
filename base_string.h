@@ -19,7 +19,7 @@ struct String8Node {
     String8 val;
 };
 
-#define Str8Lit(a) (String8){.str = a, .len = sizeof(a)}
+#define Str8Lit(a) (String8){.str = a, .len = sizeof(a) - 1}
 internal String8 str8_cat(Arena* arena, String8 a, String8 b);
 internal String8 str8_from_memz(U8* str); 
 internal String8 str8_sub(String8 str, U64 start, U64 end); 

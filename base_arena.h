@@ -1,13 +1,9 @@
-//!
-//! base_arena.h
-//!
-//! CS 270.Bolden
-//! Clang 16.0.6
-//! Caleb Barger
-//! 02/11/24 
-//! Linux x86_64
-//! barg8397@vandals.uidaho.edu
-//!
+//
+// base_arena.h
+//
+// Caleb Barger
+// 02/11/24 
+//
 
 #ifndef BASE_ARENA_H
 

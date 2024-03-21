@@ -5,6 +5,14 @@
 // 02/11/24 
 //
 
+internal B8 str8_eql(String8 a, String8 b) {
+  B8 result = 0;
+  if (a.len == b.len) {
+    result = (memcmp(a.str, b.str, a.len) == 0);
+  }
+  return result;
+}
+
 internal String8 str8_cat(Arena* arena, String8 a, String8 b) {
   String8 result;
   result.str = arena_push(arena, a.len + b.len);
@@ -45,17 +53,5 @@ internal String8 str8_copy(Arena* arena, String8 source) {
   };
   for (U64 source_index=0; source_index < source.len; ++source_index)
     dest.str[source_index] = source.str[source_index];
-  return dest;
-}
-
-internal String8 str8_copyz(Arena* arena, String8 source) {
-  String8 dest = {
-    .str = (U8*)arena_alloc(arena, source.len + 1),
-    .len = source.len + 1,
-  };
-  for (U64 source_index=0; source_index < source.len;)
-    dest.str[dest.len++] = source.str[source_index++];
-  dest.str[dest.len++] = '\0';
-
   return dest;
 }

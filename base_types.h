@@ -21,6 +21,7 @@
 #define internal static
 #define global static
 #define local_persist static
+#define Nil 0
 
 ////////////////////////////////
 //~ cabarger: Base types
