@@ -6,7 +6,7 @@
 #define SLLStackPush(h, n) SLLStackPushN(h, n, next)
 
 #define SSLQueuePushN(h, t, n, next) (IsNil(h) ? (h=n) : (\
-  IsNil(t) ? (h->next=t=n) : (t->next = n)\
+  IsNil(t) ? (h->next=t=n) : (t->next=n, t=n)\
 ))
 #define SLLQueuePush(h, t, n) SSLQueuePushN(h, t, n, next)
 
