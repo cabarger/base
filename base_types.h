@@ -21,7 +21,7 @@
 #define internal static
 #define global static
 #define local_persist static
-#define Nil 0
+#define nil 0
 
 ////////////////////////////////
 //~ cabarger: Base types
@@ -46,6 +46,7 @@ typedef double F64;
 #define AssertBreak(m) (*((volatile U32*)0) = 0xCA1EB)  
 #define AssertMessage(m) AssertBreak(m)
 #define InvalidPath AssertMessage("Invalid path")
+#define InvalidCase default: InvalidPath
 
 #define KB(n) (n * 1024)
 #define MB(n) (KB(n) * 1024)

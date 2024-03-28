@@ -1,6 +1,6 @@
 #ifndef BASE_LINKED_LISTS_H
 
-#define IsNil(v) (v==Nil)
+#define IsNil(v) (v==nil)
 
 #define SLLStackPushN(h, n, next) (IsNil(h) ? (h=n) : (n->next=h, h=n))
 #define SLLStackPush(h, n) SLLStackPushN(h, n, next)

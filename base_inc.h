@@ -9,6 +9,7 @@
 
 #include "base_types.h"
 #include "base_arena.h"
+#include "base_thread_context.h"
 #include "base_string.h"
 #include "base_linked_lists.h"
 #include "base_ascii.h"
