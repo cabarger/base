@@ -22,6 +22,7 @@ typedef struct {
 internal void* arena_push(Arena* arena, U64 size);
 internal Arena* arena_alloc_sized(U64 size);
 internal Arena* arena_alloc(); 
+internal Arena* arena_sub(Arena* arnea, U64 size);
 internal void arena_release(Arena *arena);
 internal Temp scratch_begin(Arena* arena);
 internal void scratch_end(Temp temp);

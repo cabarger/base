@@ -55,5 +55,7 @@ typedef double F64;
 #define Max(a, b) (a > b ? a : b)
 #define Min(a, b) (a < b ? a : b)
 
+#define ArrayCount(a) (sizeof(a) / sizeof(a[0]))
+
 #define BASE_TYPES_H
 #endif

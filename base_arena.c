@@ -39,7 +39,20 @@ internal Arena* arena_alloc() {
   return arena_alloc_sized(KB(5));
 };
 
-internal void arena_release(Arena *arena) {
+internal Arena* arena_sub(Arena* parent_arena, U64 size) {
+  U64 aligned_size = AlignPow2(size + sizeof(Arena), 8);
+  void* memory = arena_alloc(parent_arena, aligned_size);
+
+  Arena* arena = (Arena*)memory;
+  arena->base_ptr = (U8*)memory; 
+  arena->offset = sizeof(Arena);
+  arena->cap = aligned_size;
+  arena->growable = 0;
+
+  return arena;
+}
+
+internal void arena_release(Arena* arena) {
   free(arena->base_ptr);
 }
 
