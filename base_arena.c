@@ -41,7 +41,7 @@ internal Arena* arena_alloc() {
 
 internal Arena* arena_sub(Arena* parent_arena, U64 size) {
   U64 aligned_size = AlignPow2(size + sizeof(Arena), 8);
-  void* memory = arena_alloc(parent_arena, aligned_size);
+  void* memory = arena_push(parent_arena, aligned_size);
 
   Arena* arena = (Arena*)memory;
   arena->base_ptr = (U8*)memory; 
